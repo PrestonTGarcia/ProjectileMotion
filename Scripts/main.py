@@ -10,7 +10,7 @@
 #imports
 try: #Try except to account for Python 2.x and 3.x
     import tkinter as tk #3.x
-except:
+except ImportError:
     import Tkinter as tk #2.x
 import visualization
 
