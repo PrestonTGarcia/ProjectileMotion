@@ -14,15 +14,15 @@ except ImportError:
     import Tkinter as tk #2.x
 import visualization
 
+#Constants
+GEOMETRY = "500x200"
+TITLE = "Projectile Motion Simulator"
+BACKGROUND = "white"
+
 def main():
     """main method of the visualization, opens a matplotlib
     window and controls behavior of the visualization along with
     the sliders"""
-
-    #Constants
-    GEOMETRY = "500x200"
-    TITLE = "Projectile Motion Simulator"
-    BACKGROUND = "white"
 
     #Main window asking for initial height, distance, and speed
     root = tk.Tk(BACKGROUND) 
