@@ -1,6 +1,9 @@
 ##################################################################
-# Projectile Motion --- Program that visualizes trajectory of a  #
-# projectile with a given initial distance, height, and velocity.#
+# main --- Program that opens up the main window asking the user #
+# to give an initial x distance, y height, and v speed for the   #
+# projectile. This window is opened using tkinter. Once all these#
+# variables are inputted correctly, the visualiztion window opens#
+# up and visualizes the trajectory with the variables.           #
 # @author Preston Garcia                                         #
 ##################################################################
 
@@ -24,10 +27,13 @@ def main():
     #Main window asking for initial height, distance, and speed
     root = tk.Tk(BACKGROUND) 
 
+    rootIcon = tk.PhotoImage(file="C:\\Users\\prest\\Desktop\\Coding\\Python\\ProjectileMotion\\Images\\Trajectory.png")
+
     #Window settings
     root.title(TITLE)
     root.geometry(GEOMETRY)
     root.configure(bg=BACKGROUND)
+    root.iconphoto(False, rootIcon)
 
     #Labels for initial x, y, and v with m and m/s as units
     xLabel = tk.Label(root, text="xᵢ = ", bg=BACKGROUND)

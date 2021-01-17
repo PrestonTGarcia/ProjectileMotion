@@ -1,7 +1,19 @@
+##################################################################
+# visualization --- Program that visualizes the trajectory of a  #
+# projectile given an initial x, y, and v. This links to the     #
+# tkinter window in the main program (root, or master), saves the#
+# data that the user inputted, and closes the window to open the #
+# visualization of the projectile.                               #
+# @author Preston Garcia                                         #
+##################################################################
+
+
 try:
     import tkinter.messagebox as mb
-except:
+    from tkinter import PhotoImage
+except ImportError:
     import Tkinter.messagebox as mb
+    from Tkinter import PhotoImage
 import matplotlib.pyplot as plt
 from matplotlib.widgets import Slider
 import numpy as np
@@ -31,7 +43,7 @@ def main(master, xEntry, yEntry, vEntry):
 
         mb.showerror("Value Error", "One or more of your inputted values are not numbers.")
         return
-    
+
     #t = (v0 * sin(theta) + sqrt((v0*sin(theta))^2 + 2g * y0) / g
     #max time will be when theta = 45 degrees or pi/4 radians
     maxT = (vi * np.sin(np.pi/2) + np.sqrt(np.square(vi*np.sin(np.pi/2)) + 2 * G * yi)) / G
@@ -115,4 +127,6 @@ def main(master, xEntry, yEntry, vEntry):
 
     sTheta.on_changed(update)
     sTime.on_changed(update)
+
+    plt.gcf().canvas.set_window_title("Visualization")
     plt.show()
