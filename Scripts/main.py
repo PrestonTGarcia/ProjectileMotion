@@ -25,7 +25,7 @@ def main():
     the sliders"""
 
     #Main window asking for initial height, distance, and speed
-    root = tk.Tk(BACKGROUND) 
+    root = tk.Tk() 
 
     rootIcon = tk.PhotoImage(file="C:\\Users\\prest\\Desktop\\Coding\\Python\\ProjectileMotion\\Images\\Trajectory.png")
 
